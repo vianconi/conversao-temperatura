@@ -1,0 +1,28 @@
+# Excluye la carpeta node_modules, ya que será regenerada dentro del contenedor
+# al ejecutar npm install. Esto reduce el tamaño del contexto de build.
+node_modules/
+
+# Ignora todos los archivos de registro (.log) generados por el sistema o por npm.
+# Estos archivos son innecesarios para la ejecución de la aplicación dentro del contenedor.
+*.log
+
+# Excluye el archivo .env, que usualmente contiene variables de entorno sensibles
+# (como claves de API o contraseñas). Esto protege la información sensible y evita
+# que se incluya accidentalmente en la imagen.
+.env
+
+# Ignora la carpeta .git, que contiene el historial del repositorio Git.
+# Esta carpeta no es necesaria para ejecutar la aplicación dentro del contenedor,
+# y su exclusión reduce el tamaño del contexto de build.
+.git/
+
+# Ejemplo adicional: Ignora los archivos temporales creados por el sistema operativo
+# o el editor de texto (por ejemplo, archivos de Mac o de VSCode).
+# .DS_Store es específico de macOS y .vscode es la configuración del editor Visual Studio Code.
+.DS_Store
+.vscode/
+
+# Ejemplo adicional: Ignora cualquier archivo de pruebas locales o configuraciones
+# específicas que no son necesarias para la ejecución en producción.
+tests/
+
